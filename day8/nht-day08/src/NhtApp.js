@@ -32,7 +32,7 @@ class NhtApp extends Component {
     return (
       <div>
         <h1 className="text-center">
-          Trịnh Văn Chung - K23CNT3 - Mini Project1
+          Nguyen huu tuyen123
         </h1>
         <section className="container-fluid mt-3">
           <div className="row">
