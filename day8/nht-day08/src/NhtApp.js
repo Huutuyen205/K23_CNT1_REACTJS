@@ -8,10 +8,10 @@ class NhtApp extends Component {
     super(props);
     this.state = {
       NhtStudents:[
-        {NhtId:"SV001",NhtStudentName:"Trịnh Văn Chung",NhtAge:46,NhtGender:"Nam",NhtBirthday:"25/05/1979",NhtBirthPlace:"HN", NhtAddress:"Tòa VCN, 25 Vũ Ngọc Phan"},
-        {NhtId:"SV002",NhtStudentName:"Chu Nguyên Chương",NhtAge:188,NhtGender:"Nữ",NhtBirthday:"25/05/1179",NhtBirthPlace:"HP", NhtAddress:"Trung quốc"},
-        {NhtId:"SV003",NhtStudentName:"Tần Thủy Hoàng",NhtAge:55,NhtGender:"Nam",NhtBirthday:"25/05/1079",NhtBirthPlace:"TpHCM", NhtAddress:"Trung Quốc"},
-        {NhtId:"SV004",NhtStudentName:"Hoàng Thùy Linh",NhtAge:55,NhtGender:"Nam",NhtBirthday:"25/05/1079",NhtBirthPlace:"TpHCM", NhtAddress:"Hồ chí minh"},
+        {NhtId:"SV001",NhtStudentName:"Nguyen thi ngoc mai",NhtAge:19,NhtGender:"nu",NhtBirthday:"03/10/2005",NhtBirthPlace:"HD", NhtAddress:"Tòa VCN, 25 Vũ Ngọc Phan"},
+        {NhtId:"SV002",NhtStudentName:"Ha Thi Luyen ",NhtAge:18,NhtGender:"Nữ",NhtBirthday:"16/04/2005",NhtBirthPlace:"YB", NhtAddress:"HD"},
+        {NhtId:"SV003",NhtStudentName:"Pham Viet Anh",NhtAge:18,NhtGender:"Nam",NhtBirthday:"01/08/2005",NhtBirthPlace:"YB", NhtAddress:"HD"},
+        {NhtId:"SV004",NhtStudentName:"Nguyen Huu Tuyen",NhtAge:18,NhtGender:"Nam",NhtBirthday:"01/09/2005",NhtBirthPlace:"VP", NhtAddress:"88"},
       ],
       NhtStudent:"",
 
