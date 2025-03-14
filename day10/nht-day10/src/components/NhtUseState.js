@@ -5,42 +5,49 @@ export default function NhtUseState() {
     const [nhtArray, setNhtArray] = useState([10, 12, 22, 32]);
     const [nhtStudentList, setNhtStudentList] = useState([
         { nhtId: "001", nhtName: "Nguyễn Hữu Tuyên", nhtAge: "18" },
-        { nhtId: "002", nhtName: "Nguyễn Hữu Tuyên", nhtAge: "18" }
+        { nhtId: "002", nhtName: "Nguyễn Văn A", nhtAge: "19" }
     ]);
 
-    // Hàm xử lý thêm phần tử vào nhtArray
-    const nhtHandleAddlist = () => {
-        setNhtArray([...nhtArray, parseInt(Math.random() * 200)]);
+    // State để lưu input từ người dùng
+    const [newStudent, setNewStudent] = useState({
+        nhtId: "",
+        nhtName: "",
+        nhtAge: ""
+    });
+
+    // Xử lý nhập liệu
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setNewStudent(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
     };
-    // ham xu ly sk them moi
-    const nhtHandleAddNewStudent = ()=>{
-        let nhtStudent ={
-            nhtId:"004",
-            nhtName:"nguyen qunag a",
-            nhtAge:"19"
-        };
-        //them vao state
-        setNhtStudentList([
-            ...nhtStudentList,
-            nhtStudent
-        ])
 
+    // Hàm xử lý thêm sinh viên mới từ input
+    const nhtHandleAddNewStudent = () => {
+        if (!newStudent.nhtId || !newStudent.nhtName || !newStudent.nhtAge) {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
 
-        console.log("list:",nhtStudentList);
-    }
+        // Cập nhật danh sách sinh viên
+        setNhtStudentList(prevList => [...prevList, newStudent]);
+
+        // Reset input sau khi thêm
+        setNewStudent({ nhtId: "", nhtName: "", nhtAge: "" });
+    };
 
     return (
         <div className='alert alert-danger'>
             <h2>useState Demo</h2>
+
             <div>
                 <h3>Count: {nhtCount} </h3>
                 <button onClick={() => setNhtCount(nhtCount + 1)}>Tăng</button>
                 <button onClick={() => setNhtCount(nhtCount - 1)}>Giảm</button>
             </div>
-            <div>
-                <h3>Array: {nhtArray.toString()} </h3>
-                <button onClick={nhtHandleAddlist}>Thêm phần tử</button>
-            </div>
+
             <div>
                 <h3>Danh sách sinh viên</h3>
                 <table className='table table-bordered'>
@@ -60,12 +67,34 @@ export default function NhtUseState() {
                             </tr>
                         ))}
                     </tbody>
-                    <tfoot>
-                        <button onClick={nhtHandleAddNewStudent}>
-them
-                        </button>
-                    </tfoot>
                 </table>
+            </div>
+
+            {/* Form nhập thông tin sinh viên mới */}
+            <div>
+                <h3>Thêm Sinh Viên</h3>
+                <input 
+                    type="text" 
+                    name="nhtId" 
+                    placeholder="ID" 
+                    value={newStudent.nhtId} 
+                    onChange={handleChange} 
+                />
+                <input 
+                    type="text" 
+                    name="nhtName" 
+                    placeholder="Tên" 
+                    value={newStudent.nhtName} 
+                    onChange={handleChange} 
+                />
+                <input 
+                    type="number" 
+                    name="nhtAge" 
+                    placeholder="Tuổi" 
+                    value={newStudent.nhtAge} 
+                    onChange={handleChange} 
+                />
+                <button onClick={nhtHandleAddNewStudent}>Thêm</button>
             </div>
         </div>
     );
