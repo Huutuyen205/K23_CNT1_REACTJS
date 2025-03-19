@@ -1,0 +1,55 @@
+
+/* Background gradient & box shadow */
+.nvk-navbar {
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Menu list */
+  .nvk-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Menu item */
+  .nvk-menu li {
+    display: inline-block;
+  }
+  
+  /* Link styles */
+  .nvk-menu li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Hover effect */
+  .nvk-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+  
+  /* Keyframe animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
